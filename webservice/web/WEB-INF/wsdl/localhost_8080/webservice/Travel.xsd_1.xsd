@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://bai1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://bai1/">
+
+<xs:element name="calculateFee" type="tns:calculateFee" />
+
+<xs:element name="calculateFeeResponse" type="tns:calculateFeeResponse" />
+
+<xs:complexType name="calculateFee">
+<xs:sequence>
+<xs:element name="cardHolderName" type="xs:string" minOccurs="0" />
+<xs:element name="cardType" type="xs:string" minOccurs="0" />
+<xs:element name="cardNumber" type="xs:string" minOccurs="0" />
+<xs:element name="cvcNumber" type="xs:string" minOccurs="0" />
+<xs:element name="expirationDate" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="calculateFeeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

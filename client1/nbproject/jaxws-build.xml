@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-Travel" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Travel"/>
+        <property name="wsdl-Travel" location="xml-resources/web-service-references/Travel/wsdl/localhost_8080/webservice/Travel.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Travel" destdir="${build.generated.dir}/jax-wsCache/Travel" wsdl="${wsdl-Travel}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/webservice/Travel?wsdl" xnocompile="true" xendorsed="true" package="service">
+            <depends file="${wsdl-Travel}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Travel"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Travel">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Travel" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/Travel"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service"/>
+    </target>
+    <target name="wsimport-client-OrderService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OrderService"/>
+        <property name="wsdl-OrderService" location="xml-resources/web-service-references/OrderService/wsdl/localhost_8080/webservice/OrderService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OrderService" destdir="${build.generated.dir}/jax-wsCache/OrderService" wsdl="${wsdl-OrderService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/webservice/OrderService?wsdl" xnocompile="true" xendorsed="true" package="orderclient">
+            <depends file="${wsdl-OrderService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OrderService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OrderService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OrderService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/OrderService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/orderclient"/>
+    </target>
+    <target name="wsimport-client-InventoryService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/InventoryService"/>
+        <property name="wsdl-InventoryService" location="xml-resources/web-service-references/InventoryService/wsdl/localhost_8080/webservice/InventoryService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/InventoryService" destdir="${build.generated.dir}/jax-wsCache/InventoryService" wsdl="${wsdl-InventoryService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/webservice/InventoryService?wsdl" xnocompile="true" xendorsed="true" package="inventoryclient">
+            <depends file="${wsdl-InventoryService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/InventoryService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/InventoryService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-InventoryService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/InventoryService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/inventoryclient"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Travel, wsimport-client-OrderService, wsimport-client-InventoryService"/>
+</project>
